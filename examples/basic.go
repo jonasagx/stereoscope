@@ -2,18 +2,24 @@ package main
 
 import (
 	"fmt"
-	"github.com/anchore/stereoscope/pkg/filetree/filenode"
 	"io/ioutil"
 	"os"
 
 	"github.com/anchore/stereoscope"
 	"github.com/anchore/stereoscope/pkg/file"
+	"github.com/anchore/stereoscope/pkg/filetree/filenode"
+	"github.com/sirupsen/logrus"
 )
 
 func main() {
 	// note: we are writing out temp files which should be cleaned up after you're done with the image object
 	defer stereoscope.Cleanup()
 
+	l := logrus.New()
+	l.Out = os.Stdout
+	l.Level = logrus.DebugLevel
+
+	stereoscope.SetLogger(l)
 	/////////////////////////////////////////////////////////////////
 	// pass a path to an Docker save tar, docker image, or OCI directory/archive as an argument:
 	//    ./path/to.tar

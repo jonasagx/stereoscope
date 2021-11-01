@@ -21,6 +21,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/scylladb/go-set v1.0.2
 	github.com/sergi/go-diff v1.1.0
+	github.com/sirupsen/logrus v1.6.0 // indirect
 	github.com/spf13/afero v1.2.2
 	github.com/stretchr/testify v1.6.0
 	github.com/wagoodman/go-partybus v0.0.0-20200526224238-eb215533f07d
